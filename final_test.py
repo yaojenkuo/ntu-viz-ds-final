@@ -36,14 +36,11 @@ class FinalExamTest:
             test_df = self._test_dict[dict_key]
             answer_df.columns = test_df.columns
             answer_df.index = test_df.index
-            if i ==  6:
-                answer_df = answer_df.sort_values(['cosine_similarity', 'combined_key'], ascending=[False, True])
-                test_df = test_df.sort_values(['cosine_similarity', 'combined_key'], ascending=[False, True])
             try:
                 answer_df_str = answer_df.astype(str)
                 test_df_str = test_df.astype(str)
-                #answer_df_str.columns = test_df.columns
-                #answer_df_str.index = test_df.index
+                answer_df_str.columns = test_df.columns
+                answer_df_str.index = test_df.index
                 assert_frame_equal(test_df_str, answer_df_str)
                 summary["Question {}".format(i + 1)] = 5
                 print("Congrats! answer {} passed!".format(i + 1))
