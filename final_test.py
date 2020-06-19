@@ -37,9 +37,9 @@ class FinalExamTest:
             try:
                 answer_df_str = answer_df.astype(str)
                 test_df_str = test_df.astype(str)
-                answer_df.columns = test_df.columns
-                answer_df.index = test_df.index
-                assert_frame_equal(test_df, answer_df)
+                answer_df_str.columns = test_df.columns
+                answer_df_str.index = test_df.index
+                assert_frame_equal(test_df_str, answer_df_str)
                 summary["Question {}".format(i + 1)] = 5
                 print("Congrats! answer {} passed!".format(i + 1))
             except:
