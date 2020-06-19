@@ -34,8 +34,6 @@ class FinalExamTest:
             dict_key = "question_{}".format(i + 1)
             answer_df = self._answer_dict[dict_key]
             test_df = self._test_dict[dict_key]
-            answer_df.columns = test_df.columns
-            answer_df.index = test_df.index
             try:
                 answer_df_str = answer_df.astype(str)
                 test_df_str = test_df.astype(str)
